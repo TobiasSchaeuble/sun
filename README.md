@@ -24,11 +24,11 @@
 			
 		4. unmount the sd card
 			
-				diskutil unmountDisk /dev/disk<disk#>
+				diskutil unmountDisk /dev/disk<#>
 			
 		5. disk dump (copy) the image to the sd card (on mac you can see the process with ctrl+T) 
 		
-				sudo dd bs=1m if=/put/the/path/of/your/downloaded/img.img of=/dev/rdisk<disk#>
+				sudo dd bs=1m if=/put/the/path/of/your/downloaded/img.img of=/dev/rdisk<#>
 				
 			this step can take a while(depending on the sd card speed up to 30min)
 	
@@ -124,20 +124,26 @@
 						
 				2. (**additional** if you want to develop the front end) install grunt
 				
-					add root password (type any password you want)
+					curl the node source
 					
-						sudo passwd root
+						curl -sL https://deb.nodesource.com/setup | sudo bash -
+					
+					add root password (type any password you want) 
+					
+						sudo passwd root 
+						su root
 						cd
-						
-					add curl link
 					
-						curl --silent --location https://deb.nodesource.com/setup_0.12 | bash -
-						
-					install nodejs and build tools
+					install node 
 					
-						apt-get install --yes nodejs
-						apt-get install --yes build-essential
-						exit
+						wget http://nodejs.org/dist/v0.10.2/node-v0.10.2.tar.gz
+						tar -xzf node-v0.10.2.tar.gz
+						cp cp -r node-v0.10.28-linux-arm-pi/bin/npm /usr/bin/npm
+						cp -r node-v0.10.28-linux-arm-pi/bin/node /usr/bin/node
+						cp -r node-v0.10.28-linux-arm-pi/bin/npm /usr/bin/npm
+						cp -r node-v0.10.28-linux-arm-pi/lib/node_modules /usr/lib/node_modules 
+						
+						
 						
 			
 			9. get the sun repository
@@ -149,7 +155,7 @@
 			
 					python sun/backend/PixelLightsDemo.py
 					
-##backup
+##backup: 
 
 if you want to back up the whole os you can plug the sd card back to the computer have a look witch number the sd card got
 
@@ -159,4 +165,7 @@ and inser this number in the following
 		
 	sudo dd bs=4m if=/dev/disk<#> | gzip > /place/where/the/backup/will/be/image`date +%d%m%y`.gz
 
-if you want to restore the backup us the .gz file in the setup file.	
+if you want to restore the backup
+
+	diskutil unmountDisk /dev/disk<#>	
+	sudo gzip -dc /place/where/you/put/the/backup/image.gz | dd bs=4m of=/dev/rdisk<#>	
