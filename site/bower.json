@@ -1,0 +1,17 @@
+{
+  "name": "ontos-kti-dow-wp6-forest-use-case",
+  "version": "0.0.1",
+  "license": "Proprietary",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/contrib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {}
+}
