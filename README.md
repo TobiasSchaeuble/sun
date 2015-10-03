@@ -90,8 +90,38 @@
 						sudo apt-get install python-pip
 						sudo pip install spidev
 						
+				2. install apache2 and php5
+				
+						sudo apt-get install apache2 -y
+						sudo rm -rf /var/www
+						sudo ln -s /home/pi/sun/site/src/ /var/www
+						
+				3. change host and avahi-daemon
+				
+						sudo nano /etc/hosts
+					
+					change the "raspberrypi" at last line to **sun**
+					
+						sudo nano /etc/hostname
+						
+					same hear chnage the "raspberrypi" to **sun**
+					
+						sudo /etc/init.d/hostname.sh
+						sudo reboot	
+						
+					after the rasberry rebootet log in again with ssh (just press the up arrow once and enter)
+					
+						ssh pi@<xxx.xxx.xxx.xxx>
+						
+					install avahi-daemon
+					
+						sudo apt-get install avahi-daemon
+						
+					you shoud now be able to accsess your raspberry via [sun.local](sun.local) in your browser
+						
 				2. (**additional** if you want to develop the front end) install grunt
 				
+					
 						
 			
 			9. get the sun repository
@@ -99,5 +129,7 @@
 					git clone git://github.com/TobiasSchaeuble/sun.git
 					git clone git://github.com/scottjgibson/PixelPi.git
 					
-			10. 		
-				
+			10. test the leds
+			
+					cd sun/backend
+					python PixelLightsDemo.py														
