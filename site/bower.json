@@ -12,6 +12,9 @@
     "tests"
   ],
   "dependencies": {
+    "angularjs": "~1.4.4",
+    "angular-ms": "*",
+    "three.js": "~0.71.0"
   },
   "devDependencies": {}
 }

@@ -1,3 +1,4 @@
 site/node_modules
 *.scssc
 site/src/contrib
+site/bower_components

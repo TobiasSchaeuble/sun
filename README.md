@@ -83,6 +83,9 @@
 			
 			8. Install the needed resources
 			
+						sudo apt-get update
+						sudo apt-get upgrade
+			
 				1. install python (for PixelPi)
 				
 						sudo apt-get update
@@ -117,11 +120,24 @@
 					
 						sudo apt-get install avahi-daemon
 						
-					you shoud now be able to accsess your raspberry via [sun.local](sun.local) in your browser
+					you shoud now be able to accsess your raspberry via [http://sun.local](http://sun.local) in your browser
 						
 				2. (**additional** if you want to develop the front end) install grunt
 				
+					add root password (type any password you want)
 					
+						sudo passwd root
+						cd
+						
+					add curl link
+					
+						curl --silent --location https://deb.nodesource.com/setup_0.12 | bash -
+						
+					install nodejs and build tools
+					
+						apt-get install --yes nodejs
+						apt-get install --yes build-essential
+						exit
 						
 			
 			9. get the sun repository
@@ -131,5 +147,16 @@
 					
 			10. test the leds
 			
-					cd sun/backend
-					python PixelLightsDemo.py														
+					python sun/backend/PixelLightsDemo.py
+					
+##backup
+
+if you want to back up the whole os you can plug the sd card back to the computer have a look witch number the sd card got
+
+	diskutil list
+	
+and inser this number in the following		
+		
+	sudo dd bs=4m if=/dev/disk<#> | gzip > /place/where/the/backup/will/be/image`date +%d%m%y`.gz
+
+if you want to restore the backup us the .gz file in the setup file.	

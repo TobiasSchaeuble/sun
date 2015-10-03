@@ -128,7 +128,7 @@ module.exports = function(grunt) {
 						files : [ {
 							expand : true,
 							cwd : '<%= project.buildtarget %>/',
-							src : [ 'index.php', 'app/**/*.html', 'app/**/*.js' ],
+							src : [ 'index.html', 'app/**/*.html', 'app/**/*.js' ],
 							dest : '<%= project.buildtarget %>/'
 						} ]
 					}
@@ -137,7 +137,7 @@ module.exports = function(grunt) {
 				// watch
 				watch : {
 					index : {
-						files : [ 'src/index.php', 'src/**/*.tpl.html' ],
+						files : [ 'src/index.html', 'src/**/*.tpl.html' ],
 						tasks : [],
 						options : {
 							livereload : true
