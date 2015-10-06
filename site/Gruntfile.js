@@ -200,6 +200,7 @@ module.exports = function(grunt) {
 				'bowercopy', 'clean:useless', ]);
 	});
 
+	grunt.registerTask('build-dev-watch', [ 'build-dev', 'watch' ]);
 	grunt.registerTask('build-dev-live', [ 'build-dev', 'express',
 			'open:firefox', 'watch' ]);
 
