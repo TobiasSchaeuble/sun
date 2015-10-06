@@ -16,7 +16,7 @@
 
 1. Install raspbian-wheezy [official link](https://www.raspberrypi.org/documentation/installation/installing-images/)
 	1. prepare the sd card on your computer:
-		1. first download the [img](https://downloads.raspberrypi.org/raspbian/images/raspbian-2015-05-07/2015-05-05-raspbian-wheezy.zip) (in my case it was the 2015-05-05 build) on you computer
+		1. first download the [img](https://downloads.raspberrypi.org/raspbian_latest) (in my case it was the 2015-09-24 build Kernel Version 4.1) on you computer
 		2. insert the sd card into your computer
 		3. get the sd-card mount number (attention: be suer what number otherwise data can get lost)
 		
@@ -80,24 +80,29 @@
 					ssh pi@<xxx.xxx.xxx.xxx>	
 					
 				yes the RSA dialog and use your computer password to accept
+				
+			8. get the sun repository
 			
-			8. Install the needed resources
+					git clone git://github.com/TobiasSchaeuble/sun.git
+					git clone git://github.com/scottjgibson/PixelPi.git
 			
+			9. Install the needed resources
+						
+						(sudo apt-get autoremove)
+						(sudo apt-get autoclean)
 						sudo apt-get update
 						sudo apt-get upgrade
 			
 				1. install python (for PixelPi)
 				
-						sudo apt-get update
-						sudo apt-get install python-dev
-						sudo apt-get install python-pip
+						sudo apt-get install python-dev						sudo apt-get install python-pip
 						sudo pip install spidev
 						
 				2. install apache2 and php5
 				
 						sudo apt-get install apache2 -y
-						sudo rm -rf /var/www
-						sudo ln -s /home/pi/sun/site/src/ /var/www
+						sudo rm -rf /var/www/html
+						sudo ln -s /home/pi/sun/site/src/ /var/www/html
 						
 				3. change host and avahi-daemon
 				
@@ -118,15 +123,16 @@
 						
 					install avahi-daemon
 					
-						sudo apt-get install avahi-daemon
+						(sudo apt-get install avahi-daemon)
 						
 					you shoud now be able to accsess your raspberry via [http://sun.local](http://sun.local) in your browser
-						
-				2. (**additional** if you want to develop the front end) install grunt
 				
-					curl the node source
+				
+				2. (**additional** if you want to develop on the Project) install nodejs/npm
+				
+					install screen 
 					
-						curl -sL https://deb.nodesource.com/setup | sudo bash -
+						(sudo apt-get install screen)
 					
 					add root password (type any password you want) 
 					
@@ -134,22 +140,21 @@
 						su root
 						cd
 					
-					install node 
+					install node
 					
-						wget http://nodejs.org/dist/v0.10.2/node-v0.10.2.tar.gz
-						tar -xzf node-v0.10.2.tar.gz
-						cp cp -r node-v0.10.28-linux-arm-pi/bin/npm /usr/bin/npm
-						cp -r node-v0.10.28-linux-arm-pi/bin/node /usr/bin/node
-						cp -r node-v0.10.28-linux-arm-pi/bin/npm /usr/bin/npm
-						cp -r node-v0.10.28-linux-arm-pi/lib/node_modules /usr/lib/node_modules 
-						
-						
-						
-			
-			9. get the sun repository
-			
-					git clone git://github.com/TobiasSchaeuble/sun.git
-					git clone git://github.com/scottjgibson/PixelPi.git
+					replace wheezy with jessie and close the nano by ctrl + x and y to save.			
+					
+						wget http://node-arm.herokuapp.com/node_latest_armhf.deb
+						sudo dpkg -i node_latest_armhf.deb
+												
+					now you can install all the dependecies (this can take a while 2h)
+					
+						cd sun/site
+						npm install
+					
+					and giv it a try
+					
+						grunt build-dev
 					
 			10. test the leds
 			
@@ -167,5 +172,9 @@ and inser this number in the following
 
 if you want to restore the backup
 
+	diskutil list
 	diskutil unmountDisk /dev/disk<#>	
-	sudo gzip -dc /place/where/you/put/the/backup/image.gz | dd bs=4m of=/dev/rdisk<#>	
+	sudo gzip -dc /place/where/you/put/the/backup/image.gz | sudo dd bs=4m of=/dev/rdisk<#>	
+##jessie:
+
+	sudo raspi-config
