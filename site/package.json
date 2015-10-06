@@ -29,6 +29,7 @@
     "grunt-protractor-runner": "^1.2.1",
     "grunt-replace": "^0.8.0",
     "grunt-template-jasmine-istanbul": "^0.3.4",
+    "gulp-ruby-sass": "^2.0.4",
     "jasmine-core": "^2.2.0",
     "karma-firefox-launcher": "^0.1.4",
     "matchdep": "^0.3.0",
