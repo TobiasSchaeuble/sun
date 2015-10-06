@@ -13,7 +13,7 @@
   ],
   "dependencies": {
     "angularjs": "~1.4.4",
-    "angular-ms": "*",
+    "angular-ms": "*"
   },
   "devDependencies": {}
 }

@@ -77,8 +77,6 @@ module.exports = function(grunt) {
 							'angular/angular.min.js' : 'angular/angular.min.js',
 							// angularjs
 							'angular-ms/dist/js//angular.min.js' : 'angular-ms/dist/js//angular-ms.min.js',
-							// three.js
-							'three.js/three.min.js' : 'three.js/three.min.js'
 						}
 					}
 				},

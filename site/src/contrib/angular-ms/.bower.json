@@ -1,0 +1,30 @@
+{
+  "name": "angular-ms",
+  "homepage": "https://github.com/ejmarino/angular-ms",
+  "authors": [
+    "Emiliano Marino <emiliano@ejmarino.com>"
+  ],
+  "description": "Angular's Publish/Subscribe Messaging Service",
+  "main": "dist/js/angular-ng.min.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "*",
+    "angular-mocks": "~1.4.0"
+  },
+  "_release": "1fc6c11f08",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "1fc6c11f08ce1a261daeeafeec3e7fcd29d3908a"
+  },
+  "_source": "git://github.com/ejmarino/angular-ms.git",
+  "_target": "*",
+  "_originalSource": "angular-ms"
+}

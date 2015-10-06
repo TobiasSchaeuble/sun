@@ -1,0 +1,51 @@
+{
+  "name": "angular-ms",
+  "version": "1.0.0",
+  "description": "Angular's Publish/Subscribe Messaging Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ejmarino/angular-ms.git"
+  },
+  "keywords": [
+    "angular",
+    "pubsub",
+    "publish",
+    "subscribe",
+    "communication",
+    "messaging",
+    "message"
+  ],
+  "author": "Emiliano Marino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ejmarino/angular-ms/issues"
+  },
+  "homepage": "https://github.com/ejmarino/angular-ms",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "del": "^1.2.0",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-karma": "0.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-tslint": "^3.0.1-beta",
+    "gulp-typescript": "^2.7.5",
+    "gulp-uglify": "^1.2.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "http-server": "^0.8.0",
+    "jasmine": "^2.3.1",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.36",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-jasmine": "^0.3.5",
+    "karma-jasmine-html-reporter": "^0.1.8",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "merge2": "^0.3.5",
+    "phantomjs": "^1.9.17",
+    "tsd": "^0.6.0"
+  }
+}
