@@ -32,6 +32,7 @@
     "jasmine-core": "^2.2.0",
     "karma-firefox-launcher": "^0.1.4",
     "matchdep": "^0.3.0",
+    "node-sass": "^3.3.3",
     "protractor": "^1.7.0"
   }
 }
