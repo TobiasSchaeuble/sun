@@ -9,12 +9,16 @@
 	</head>
 	<body ng-app="sun">
 
-		<div class="topbar" top-bar-image>
-			<div class="header" > <!-- ng-controller="topbartime" -->
+		<div class="topbar" ng-controller="topBarImage" ng-style="{{x}}">
+			<div class="header" ng-controller="topbartime"> 
 				<h1 >SUN </h1>
-				<span ng-bind = "HHmmss"></span>
+				<span ng-bind = "t2.HHmmss"></span>
 			</div>
 		</div>
+		<div class="header" ng-controller="topbartime"> 
+				<h1 >SUN </h1>
+				<span ng-bind = "t2.HHmmss | date : format : timezone"></span>
+			</div>
 		<div class="middelbar">
 			<div class="drawer">
 				<button>

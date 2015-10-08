@@ -164,8 +164,7 @@
 
 if you want to back up the whole os you can plug the sd card back to the computer have a look witch number the sd card got
 
-	diskutil list
-	
+			
 and inser this number in the following		
 		
 	sudo dd bs=4m if=/dev/disk<#> | gzip > /place/where/the/backup/will/be/image`date +%d%m%y`.gz
